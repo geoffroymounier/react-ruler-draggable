@@ -113,3 +113,5 @@ function App() {
 [MIT][mit-license]
 
 [mit-license]: ./LICENSE
+
+"Default Cursor Icon made by Pixel perfect from www.flaticon.com"
