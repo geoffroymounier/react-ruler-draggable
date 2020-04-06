@@ -1,0 +1,43 @@
+.ruler {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+  background-size:inherit;
+
+}
+.ruler.horizontal {
+  background-repeat-y: no-repeat;
+}
+.ruler::-webkit-scrollbar {
+  display: none;
+}
+
+.dragger {
+  position: absolute;
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.dragger--circle {
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  border-width: 1;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid blue;
+  display: flex;
+  color:black;
+  justify-content: space-around;
+  align-items: center;
+}
+.dragger--circle.horizontal {
+  left: 0px;
+  top: -24px;
+  flex-direction: row;
+}
+.dragger--circle.extrema {
+  border: 2px solid #C6CCCB;
+}
+.dragger--circle div {
+  transform: translateY(1px);
+}
