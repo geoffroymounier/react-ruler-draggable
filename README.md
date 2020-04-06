@@ -47,21 +47,18 @@ const onChanged = (value) => {
 ``` js
 function App() {
   const refRuler = useRef()
-  const [value,setValue] = useState(0.9)
+  const [value,setValue] = useState(null)
 
   const pressingDown = () => refRuler.current.pressingDown()
-  const pressingUp = () => {
-    console.log('did press up')
-    refRuler.current.pressingUp()
-  }
+  const pressingUp = () => refRuler.current.pressingUp()
   const stopPressing = () => refRuler.current.stopPressing()
   const onChanged = (value) => setValue(value)
 
   return (
     <div>
-        <div onTouch={pressingDown} onMouseUp={stopPressing}>Down</div>
-        <div onMouseDown={pressingUp} onMouseUp={stopPressing}>Up</div>
-        <br />
+        <button onMouseDown={pressingDown} onMouseUp={stopPressing}>Down</button>
+        <button onMouseDown={pressingUp} onMouseUp={stopPressing}>Up</button>
+        <div>{value}</div>
         <Ruler
            ref={refRuler}
            defaultValue={50}
@@ -73,8 +70,6 @@ function App() {
     </div>
   );
 }
-
-export default App;
 ```
 
 ## Proptypes
