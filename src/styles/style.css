@@ -2,7 +2,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow: auto;
-  background-size:inherit;
+  background-size:cover;
 
 }
 .ruler.horizontal {
@@ -15,7 +15,13 @@
 .dragger {
   position: absolute;
   pointer-events: auto;
+  width:100%;
+  height:auto;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.dragger.horizontal {
+  height:100%;
+  width:auto;
 }
 .dragger--circle {
   width: 40px;
@@ -24,7 +30,7 @@
   border-width: 1;
   border-radius: 50%;
   background: white;
-  border: 3px solid blue;
+  border: 3px solid black;
   display: flex;
   color:black;
   justify-content: space-around;
