@@ -56,7 +56,7 @@ const Ruler = forwardRef(
     const [load] = useDebounce(loadRaw, 150)
     const backgroundImageDefault = horizontal ? rulerImg : rulerImgVertical
     const cursorLength = useRef()
-    const CursorElement = cursor || <Cursor />
+    const CursorElement = cursor || <Cursor horizontal={horizontal}/>
     const listenMouseEventUp = callback => {
       window.ontouchend = () => {
         requestAnimationFrame(() => callback(false))
@@ -264,8 +264,8 @@ const Ruler = forwardRef(
     }, [])
 
     return (
-      <div>
-        <div ref={inputEl} style={{ position: 'relative' }}>
+      <div className='ruler__container'>
+        <div ref={inputEl} style={{ position: 'relative'}}>
           <div
             className={`ruler ${horizontal && ' horizontal'}`}
             style={{
@@ -341,7 +341,7 @@ Ruler.defaultProps = {
   onChanged: () => {},
   horizontal: false,
   styleCursorContainer: {},
-  cursor: <Cursor />,
+  cursor: null,
   incremental: 1,
   defaultValue: null,
   longLength: 300,

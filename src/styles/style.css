@@ -3,7 +3,10 @@
   scrollbar-width: none;
   overflow: auto;
   background-size:cover;
-
+}
+.ruler__container {
+  display:flex;
+  align-items:center;
 }
 .ruler.horizontal {
   background-repeat-y: no-repeat;
