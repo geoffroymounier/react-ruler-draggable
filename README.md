@@ -28,10 +28,35 @@ import Ruler from 'react-ruler-draggable';
 ```
 
 ``` js
+// basic usage
 const onChanged = (value) => {
    console.log(value);
 }
 
+<Ruler
+   ref={refRuler} // react ref object
+   defaultValue={50} // 0 -100
+   onChanged={onChanged}
+   longLength = {300}
+   shortLength = {60}
+   horizontal= {true} // true | false
+/>
+```
+
+
+``` js
+// call method pressingUp / pressingDown / stopPressing to change cursor's value
+const pressingUp = () => {
+   refRuler.pressingUp()
+}
+const pressingDown = () => {
+   refRuler.pressingUp()
+}
+const stopPressing = () => {
+   refRuler.stopPressing()
+}
+<button onMouseDown={pressingDown} onMouseUp={stopPressing}>Down</button>
+<button onMouseDown={pressingUp} onMouseUp={stopPressing}>Up</button>
 <Ruler
    ref={refRuler} // react ref object
    defaultValue={50} // 0 -100
